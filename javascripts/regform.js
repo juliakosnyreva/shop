@@ -35,4 +35,11 @@ function validate(form) {
     } else if (email.search(regex)) {
         showError(elems.email.parentNode, ' E-mail введен некорректно ');
     }
+	
+		 resetError(elems.password.parentNode);
+    if (!elems.password.value) { 
+        showError(elems.password.parentNode, ' Это поле обязательно для заполнения '); 
+    } else if (elems.password.value != elems.password2.value) { 
+        showError(elems.password.parentNode, ' Пароли не совпадают '); 
+        }
 }
