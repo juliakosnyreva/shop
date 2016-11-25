@@ -18,11 +18,11 @@ function validate(form) {
     var elems = form.elements;
 
     resetError(elems.name.parentNode);
-    if (!elems.name.value) {
+    if (/^.+$/.test(elems.name.value) === false) {
         showError(elems.name.parentNode, ' Это поле обязательно для заполнения ');
     } else if (/^[а-яА-Яa-zA-Z]+$/.test(elems.name.value) === false) {
         showError(elems.name.parentNode, ' Имя введено некорректо ');
-    } else if (elems.name.value.length < 3 || elems.name.value.length > 20) {
+    } else if (/^.{3,20}/.test(elems.name.value) ===false) {
         showError(elems.name.parentNode, ' Имя должно содержать от 3 до 20 букв ');
     }
 
