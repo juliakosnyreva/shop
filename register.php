@@ -53,13 +53,13 @@
             <div class="col-sm-4 col-sm-offset-4 padding-right">
                 <div class="signup-form text-center"><!--register form-->
                     <h2>Регистрация на сайте</h2>
-                    <form name ="container">
+                    <form action="app/check.php" name ="container" method="post">
                         <div><input type="text" name="name" placeholder="Имя" value="" /></div>
                         <div><input type="text" name="email" placeholder="E-mail" value="" /></div>
                         <div><input type="password" name="password" placeholder="Пароль" value="" /></div>
                         <div><input type="password" name="password2" placeholder="Подтвердите пароль" value="" /></div>
                         <!--davay<input type="submit" name="send" onsubmit="validate(this.form)" value="Регистрация">-->
-                        <input type="button" name="send" onclick="validate(this.form)" class="btn btn-default" value="Регистрация">
+                        <input type="submit" name="send" onclick="validate(this.form)" class="btn btn-default" value="Регистрация">
                     </form>
                 </div><!--/register form-->
             </div>
