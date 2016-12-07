@@ -58,7 +58,7 @@
                         <div><input type="text" name="email" placeholder="E-mail" value="" /></div>
                         <div><input type="password" name="password" placeholder="Пароль" value="" /></div>
                         <div><input type="password" name="password2" placeholder="Подтвердите пароль" value="" /></div>
-                        <!--<input type="submit" name="send" onsubmit="validate(this.form)" value="Регистрация">-->
+                        <!--davay<input type="submit" name="send" onsubmit="validate(this.form)" value="Регистрация">-->
                         <input type="button" name="send" onclick="validate(this.form)" class="btn btn-default" value="Регистрация">
                     </form>
                 </div><!--/register form-->
