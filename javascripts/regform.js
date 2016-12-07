@@ -22,7 +22,7 @@ function validate(form) {
         showError(elems.name.parentNode, ' Это поле обязательно для заполнения ');
     } else if (/^[а-яА-Яa-zA-Z]+$/.test(elems.name.value) === false) {
         showError(elems.name.parentNode, ' Имя введено некорректо ');
-    } else if (elems.name.value.length < 3 || elems.name.value.length > 20) {
+    } else if (/^.{3,20}/.test(elems.name.value) ===false) {
         showError(elems.name.parentNode, ' Имя должно содержать от 3 до 20 букв ');
     }
 
@@ -35,6 +35,7 @@ function validate(form) {
     } else if (email.search(regex)) {
         showError(elems.email.parentNode, ' E-mail введен некорректно ');
     }
+<<<<<<< HEAD
 
     resetError(elems.password.parentNode);
     if (!elems.password.value) {
@@ -42,4 +43,13 @@ function validate(form) {
     } else if (elems.password.value != elems.password2.value) {
         showError(elems.password.parentNode, ' Пароли не совпадают.');
     }
+=======
+	
+		 resetError(elems.password.parentNode);
+    if (!elems.password.value) { 
+        showError(elems.password.parentNode, ' Это поле обязательно для заполнения '); 
+    } else if (elems.password.value != elems.password2.value) { 
+        showError(elems.password.parentNode, ' Пароли не совпадают '); 
+        }
+>>>>>>> af635add2f07582302cbdc6814a7767ce84036ad
 }

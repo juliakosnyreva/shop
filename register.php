@@ -15,14 +15,14 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="logo pull-left">
-                        <a href="index.html"><img src="images/home/logo.png" alt="Shop" /></a>
+                        <a href="index.php"><img src="images/home/logo.png" alt="Shop" /></a>
                     </div>
                 </div>
                 <div class="col-sm-8">
                     <div class="shop-menu pull-right">
                         <ul class="nav navbar-nav">
                             <li><a href="#"><i class="fa fa-shopping-cart"></i> Корзина</a></li>
-                            <li><a href="enter.html"><i class="fa fa-lock"></i> Вход</a></li>
+                            <li><a href="enter.php"><i class="fa fa-lock"></i> Вход</a></li>
                         </ul>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                 <div class="col-sm-12">
                     <div class="mainmenu pull-left">
                         <ul class="nav navbar-nav collapse navbar-collapse">
-                            <li><a href="index.html">Главная</a></li>
+                            <li><a href="index.php">Главная</a></li>
                             <li><a href="#">Каталог товаров</a></li>
                             <li><a href="#">О магазине</a></li>
                             <li><a href="#">Контакты</a></li>
