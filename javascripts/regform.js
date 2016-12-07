@@ -18,7 +18,7 @@ function validate(form) {
     var elems = form.elements;
 
     resetError(elems.name.parentNode);
-    if (!elems.name.value) {
+    if (/^.+$/.test(elems.name.value) === false) {
         showError(elems.name.parentNode, ' Это поле обязательно для заполнения ');
     } else if (/^[а-яА-Яa-zA-Z]+$/.test(elems.name.value) === false) {
         showError(elems.name.parentNode, ' Имя введено некорректо ');
@@ -28,11 +28,18 @@ function validate(form) {
 
     resetError(elems.email.parentNode);
     var email = form.elements.email.value;
-    var regex = /^[a-z0-9_-]+@[a-z0-9-]+\.[a-z]{2,6}$/i;
+    var regex = /^.+@.+$/i;
 
     if (!email) {
         showError(elems.email.parentNode, ' Это поле обязательно для заполнения ');
     } else if (email.search(regex)) {
         showError(elems.email.parentNode, ' E-mail введен некорректно ');
+    }
+
+    resetError(elems.password.parentNode);
+    if (!elems.password.value) {
+        showError(elems.password.parentNode, ' Пожалуйста, введите пароль ');
+    } else if (elems.password.value != elems.password2.value) {
+        showError(elems.password.parentNode, ' Пароли не совпадают.');
     }
 }
