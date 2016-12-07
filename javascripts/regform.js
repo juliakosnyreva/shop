@@ -35,21 +35,11 @@ function validate(form) {
     } else if (email.search(regex)) {
         showError(elems.email.parentNode, ' E-mail введен некорректно ');
     }
-<<<<<<< HEAD
-
+    
     resetError(elems.password.parentNode);
     if (!elems.password.value) {
         showError(elems.password.parentNode, ' Пожалуйста, введите пароль ');
     } else if (elems.password.value != elems.password2.value) {
         showError(elems.password.parentNode, ' Пароли не совпадают.');
     }
-=======
-	
-		 resetError(elems.password.parentNode);
-    if (!elems.password.value) { 
-        showError(elems.password.parentNode, ' Это поле обязательно для заполнения '); 
-    } else if (elems.password.value != elems.password2.value) { 
-        showError(elems.password.parentNode, ' Пароли не совпадают '); 
-        }
->>>>>>> af635add2f07582302cbdc6814a7767ce84036ad
 }
