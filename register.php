@@ -9,6 +9,7 @@
     <script src="javascripts/regform.js"></script>
 </head>
 <body>
+<?php require_once ('app/connect.php'); ?>
 <header id="header">
     <div class="header-middle">
         <div class="container">
@@ -59,7 +60,7 @@
                         <div><input type="password" name="password" placeholder="Пароль" value="" /></div>
                         <div><input type="password" name="password2" placeholder="Подтвердите пароль" value="" /></div>
                         <!--davay<input type="submit" name="send" onsubmit="validate(this.form)" value="Регистрация">-->
-                        <input type="submit" name="send" onclick="validate(this.form)" class="btn btn-default" value="Регистрация">
+                        <input type="submit" name="send" onsubmit="validate(this.form)" class="btn btn-default" value="Регистрация">
                     </form>
                 </div><!--/register form-->
             </div>

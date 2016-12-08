@@ -1,5 +1,7 @@
 <?php
 
+include 'connect.php';
+
 function validate_name($name) {
     if (empty($name)) {
         echo "Поле имя обязательно для заполнения";
