@@ -12,9 +12,20 @@ function validate_name($name) {
     }
 }
 
+function validate_pass($password, $password2) {
+    if (empty($password)) {
+        echo "Поле пароль обязательно для заполнения";
+    } else if ($password != $password2) {
+        echo "Пароли не совпадают.";
+    }
+}
+
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];
+    $password = $_POST['password'];
+    $password2 = $_POST['password2'];
 
     validate_name($name);
+    validate_pass($password, $password2);
 }
 ?>
