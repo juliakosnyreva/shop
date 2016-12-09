@@ -1,14 +1,14 @@
 <?php
 $host = 'localhost';
 $database = 'shop';
-$user = 'admin';
-$password = '123';
+$user = 'shop';
+$password = '12345678';
 
-$mysqli = new mysqli($host, $user, $password, $database);
+$dbc = new mysqli($host, $user, $password, $database);
 
-if ($mysqli->connect_errno) {
-    echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+if ($dbc->connect_errno) {
+    echo "Не удалось подключиться к MySQL: (" . $dbc->connect_errno . ") " . $dbc->connect_error;
 }
 
-mysqli_set_charset($mysqli, "utf-8");
+mysqli_set_charset($dbc, "utf-8");
 ?>
