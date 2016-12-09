@@ -9,6 +9,21 @@
     <script src="javascripts/regform.js"></script>
 </head>
 <body>
+<?php
+require_once ('app/connect.php');
+if(isset($_POST['submit'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $query = mysqli_query($mysqli, "SELECT email, password FROM users WHERE email='".$email."' LIMIT 1");
+    $data = mysqli_fetch_assoc($query);
+    if($data['password'] === $password) {
+        print "ok";
+    } else {
+        print "ne ok";
+    }
+}
+?>
 <header id="header">
     <div class="header-middle">
         <div class="container">
