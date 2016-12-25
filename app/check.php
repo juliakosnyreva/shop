@@ -2,26 +2,43 @@
 
 include 'connect.php';
 
-function validate_name($name) {
+function validate($name, $password, $password2) {
+    $answer = array(
+        "nameValid" => true,
+        "passValid" => true,
+        "errorName" => "",
+        "errorPass" => ""
+    );
     if (empty($name)) {
-        echo "Поле имя обязательно для заполнения";
-    } else if (!(preg_match('/^.{2,20}$/',$name))) {
-        echo "Имя должно содержать от 3 до 20 букв";
-    } else if (!(preg_match('/[a-zа-я]+/i',$name))){
-        echo "Неккоректное имя";
+        $answer["nameValid"] = false;
+        $answer["errorName"] = "Поле имя обязательно для заполнения";
+    } else if (!(preg_match('/^.{2,20}$/', $name))) {
+        $answer["nameValid"] = false;
+        $answer["errorName"] = "Имя должно содержать от 3 до 20 букв";
+    } else if (!(preg_match('/[a-zа-я]+/i', $name))) {
+        $answer["nameValid"] = false;
+        $answer["errorName"] = "Некорректное имя";
     }
-}
-function validate_pass($password, $password2) {
+
     if (empty($password)) {
-        echo "Поле пароль обязательно для заполнения";
+        $answer["passValid"] = false;
+        $answer["errorPass"] = "Поле пароль обязательно для заполнения";
     } else if ($password != $password2) {
-        echo "Пароли не совпадают.";
+        $answer["passValid"] = false;
+        $answer["errorPass"] = "Пароли не совпадают.";
     }
+    return $answer;
 }
 
-if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $name = $_POST['name'];
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    validate_name($name);
+    $clean = stripcslashes($_POST['data']);
+    $data = json_decode($clean);
+    $name = $data->name;
+    $password = $data->password;
+    $password2 = $data->password2;
+
+    $validationStatus = validate($name,$password, $password2);
+    echo json_encode($validationStatus);
 }
 ?>

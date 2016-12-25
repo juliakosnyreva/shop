@@ -1,4 +1,4 @@
-
+/*
 function showError(container, errorMessage) { // выводит ошибку на экран
     container.className = 'error';
     var msgElem = document.createElement('div');
@@ -42,4 +42,34 @@ function validate(form) {
     } else if (elems.password.value != elems.password2.value) {
         showError(elems.password.parentNode, ' Пароли не совпадают.');
     }
-}
+} */
+
+$(document).ready(function () {
+    $("#regForm").submit(function() {
+        event.preventDefault();
+        var jsonData = {
+            "name": $("#name").val(),
+            "password": $("#password").val(),
+            "password2": $("#password2").val()
+        };
+        $.ajax({
+            type: "POST",
+            url: "app/check.php",
+            data: {
+                "data": JSON.stringify(jsonData)
+            },
+            success: function (res) {
+                res = JSON.parse(res);
+                if (res["nameValid"] == false) {
+                    $("#error-name").removeClass("hidden").text(res["errorName"]);
+                }
+                if (res["passValid"] == false) {
+                    $("#error-pass").removeClass("hidden").text(res["errorPass"]);
+                }
+            },
+            error: function (res) {
+
+            }
+        });
+    });
+});

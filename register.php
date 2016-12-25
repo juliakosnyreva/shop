@@ -6,7 +6,8 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
-    <script src="javascripts/regform.js"></script>
+    <script src="javascripts/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="javascripts/regform.js"></script>
 </head>
 <body>
 <?php require_once ('app/connect.php'); ?>
@@ -54,13 +55,15 @@
             <div class="col-sm-4 col-sm-offset-4 padding-right">
                 <div class="signup-form text-center"><!--register form-->
                     <h2>Регистрация на сайте</h2>
-                    <form action="app/check.php" name ="container" method="post">
-                        <div><input type="text" name="name" placeholder="Имя" value="" /></div>
-                        <div><input type="text" name="email" placeholder="E-mail" value="" /></div>
-                        <div><input type="password" name="password" placeholder="Пароль" value="" /></div>
-                        <div><input type="password" name="password2" placeholder="Подтвердите пароль" value="" /></div>
+                    <form action="" name ="container" id="regForm" method="post">
+                        <div><input type="text" id="name" placeholder="Имя" value="" /></div>
+                        <div id="error-name" class="error hidden"></div>
+                        <div><input type="text" id="email" placeholder="E-mail" value="" /></div>
+                        <div><input type="password" id="password" placeholder="Пароль" value="" /></div>
+                        <div id="error-pass" class="error hidden"></div>
+                        <div><input type="password" id="password2" placeholder="Подтвердите пароль" value="" /></div>
                         <!--davay<input type="submit" name="send" onsubmit="validate(this.form)" value="Регистрация">-->
-                        <input type="submit" name="send" onsubmit="validate(this.form)" class="btn btn-default" value="Регистрация">
+                        <input type="submit" name="submitReg" class="btn btn-default" value="Регистрация">
                     </form>
                 </div><!--/register form-->
             </div>
