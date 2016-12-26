@@ -6,24 +6,12 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
-    <script src="javascripts/regform.js"></script>
+    <script src="javascripts/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="javascripts/regform.js"></script>
 </head>
 <body>
 <?php
-require_once ('app/connect.php');
-if(isset($_POST['submit'])) {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-    $query = mysqli_query($mysqli, "SELECT email, password FROM users WHERE email='".$email."' LIMIT 1");
-    $data = mysqli_fetch_assoc($query);
-    if($data['password'] === $password) {
-        print "ok";
-    } else {
-        print "ne ok";
-    }
-}
-?>
+require_once ('app/connect.php'); ?>
 <header id="header">
     <div class="header-middle">
         <div class="container">
@@ -68,10 +56,11 @@ if(isset($_POST['submit'])) {
             <div class="col-sm-4 col-sm-offset-4 padding-right">
                 <div class="signup-form text-center"><!--sign up form-->
                     <h2>Вход на сайт</h2>
-                    <form action="#" method="post">
-                        <input type="email" name="email" placeholder="E-mail" value="" required/>
-                        <input type="password" name="password" placeholder="Пароль" value="" required/>
-                        <input type="submit" onsubmit="validate(this.form)" name="submit" class="btn btn-default" value="Вход" />
+                    <form action="" id="enterForm" method="post">
+                        <div><input type="text" id="email" placeholder="E-mail" value=""/></div>
+                        <div><input type="password" id="password" placeholder="Пароль" value=""/></div>
+                        <div id="error" class="error hidden"></div>
+                        <input type="submit" name="submit" class="btn btn-default" value="Вход" />
                         <p>"Нет аккаунта?"<a href="register.php"> Регистрация</a>
                         </p>
                     </form>

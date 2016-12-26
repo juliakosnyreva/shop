@@ -72,4 +72,28 @@ $(document).ready(function () {
             }
         });
     });
+    $("#enterForm").submit(function () {
+        event.preventDefault();
+        var jsonData = {
+            "email": $("#email").val(),
+            "password": $("#password").val()
+        };
+        $.ajax({
+            type: "POST",
+            url: "app/checklogin.php",
+            data: {
+                "data": JSON.stringify(jsonData)
+            },
+            success: function (res) {
+                res = JSON.parse(res);
+                if (res["isValid"] == false) {
+                    $("#error").removeClass("hidden").text(res["error"]);
+                    $("#password").val("");
+                } else $("#error").addClass("hidden").text("");
+            },
+            error: function (res) {
+
+            }
+        });
+    });
 });
