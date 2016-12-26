@@ -11,13 +11,15 @@ function validate($name, $password, $password2) {
     );
     if (empty($name)) {
         $answer["nameValid"] = false;
-        $answer["errorName"] = "Поле имя обязательно для заполнения";
-    } else if (!(preg_match('/^.{2,20}$/', $name))) {
+        $answer["errorName"] .= " Поле имя обязательно для заполнения";
+    }
+    if (!(preg_match('/^.{2,20}$/', $name))) {
         $answer["nameValid"] = false;
-        $answer["errorName"] = "Имя должно содержать от 3 до 20 букв";
-    } else if (!(preg_match('/[a-zа-я]+/i', $name))) {
+        $answer["errorName"] .= " Имя должно содержать от 3 до 20 букв";
+    }
+    if (!(preg_match('/[a-zа-я]+/i', $name))) {
         $answer["nameValid"] = false;
-        $answer["errorName"] = "Некорректное имя";
+        $answer["errorName"] .= " Некорректное имя";
     }
 
     if (empty($password)) {
