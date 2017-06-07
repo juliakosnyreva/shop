@@ -25,6 +25,21 @@
                         </ul>
                     </div>
                 </div>
+                <?php
+                require_once 'simple_html_dom.php';
+                $date = date('d.m.Y');
+                $url='http://www.cbr.ru/currency_base/D_print.aspx?date_req=' . $date; // URL страницы с курсами валют на сегодня
+                $html = file_get_html($url); // Читаем содержимое HTML страницы
+                $charset = 'UTF-8'; // кодировка получаемой страницы
+                preg_match_all('/<td>Доллар США<\/td>\s*<td>(.*?)</', $html, $usd);
+                ?>
+                <div class="col-sm-8" id="usd">
+                    <div class="shop-menu pull-right">
+                        <ul class="nav navbar-nav">
+                            <li><i class="fa fa-usd" aria-hidden="true"> </i><?php echo $usd[1][0] ?></li>
+                        </ul>
+                    </div>               
+                </div>
             </div>
         </div>
     </div>
@@ -80,7 +95,7 @@
                                     <div class="single-products">
                                         <div class="productinfo text-center">
                                             <img src="images/home/product1.jpg" alt="" />
-                                            <h2> $1000 </h2>
+                                            <h2 id='1'> $1000 </h2>
                                             <p> Видеокарта GIGABYTE GeForce GTX 1080 </p>
                                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
                                         </div>
@@ -92,7 +107,8 @@
                                     <div class="single-products">
                                         <div class="productinfo text-center">
                                             <img src="images/home/product1.jpg" alt="" />
-                                            <h2>$3350</h2>
+                                            <h2 id='2'>$3350</h2>
+                                            
                                             <p>Alienware M18x</p>
                                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
                                         </div>
@@ -104,7 +120,7 @@
                                     <div class="single-products">
                                         <div class="productinfo text-center">
                                             <img src="images/home/product1.jpg" alt="" />
-                                            <h2>$56</h2>
+                                            <h2 id='3'>$56</h2>
                                             <p>Видеокарта GIGABYTE GeForce GTX 1080</p>
                                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
                                         </div>
@@ -116,7 +132,7 @@
                                     <div class="single-products">
                                         <div class="productinfo text-center">
                                             <img src="images/home/product1.jpg" alt="" />
-                                            <h2>$56</h2>
+                                            <h2 id='4'>$56</h2>
                                             <p>Видеокарта GIGABYTE GeForce GTX 1080</p>
                                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
                                         </div>
@@ -128,7 +144,7 @@
                                     <div class="single-products">
                                         <div class="productinfo text-center">
                                             <img src="images/home/product1.jpg" alt="" />
-                                            <h2>$56</h2>
+                                            <h2 id='5'>$56</h2>
                                             <p>Видеокарта GIGABYTE GeForce GTX 1080</p>
                                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
                                         </div>
@@ -140,7 +156,7 @@
                                     <div class="single-products">
                                         <div class="productinfo text-center">
                                             <img src="images/home/product1.jpg" alt="" />
-                                            <h2>$56</h2>
+                                            <h2 id='6' value='56'>$56</h2>
                                             <p>Видеокарта GIGABYTE GeForce GTX 1080</p>
                                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
                                         </div>
@@ -153,5 +169,8 @@
             </div>
 
         </section>
+
+    
+
 </body>
 </html>
