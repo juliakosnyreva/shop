@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+п»ї<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -19,8 +19,8 @@
                 <div class="col-sm-8">
                     <div class="shop-menu pull-right">
                         <ul class="nav navbar-nav">
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i> Корзина</a></li>
-                            <li><a href="#"><i class="fa fa-lock"></i> Вход</a></li>
+                            <li><a href="#"><i class="fa fa-shopping-cart"></i> РљРѕСЂР·РёРЅР°</a></li>
+                            <li><a href="#"><i class="fa fa-lock"></i> Р’С…РѕРґ</a></li>
                         </ul>
                     </div>
                 </div>
@@ -34,10 +34,10 @@
                 <div class="col-sm-12">
                     <div class="mainmenu pull-left">
                         <ul class="nav navbar-nav collapse navbar-collapse">
-                            <li><a href="#">Главная</a></li>
-                            <li><a href="/catalog">Каталог товаров</a></li>
-                            <li><a href="#">О магазине</a></li>
-                            <li><a href="#">Контакты</a></li>
+                            <li><a href="#">Р“Р»Р°РІРЅР°СЏ</a></li>
+                            <li><a href="/catalog">РљР°С‚Р°Р»РѕРі С‚РѕРІР°СЂРѕРІ</a></li>
+                            <li><a href="#">Рћ РјР°РіР°Р·РёРЅРµ</a></li>
+                            <li><a href="#">РљРѕРЅС‚Р°РєС‚С‹</a></li>
                         </ul>
                     </div>
                 </div>
@@ -45,3 +45,13 @@
         </div>
     </div>
 </header>
+    <section>
+        <div class="container">  
+            <div class="row">
+				<?php include 'application/views/'.$content_view; ?>
+			</div>
+        </div>
+    </section>
+
+</body>
+</html>
