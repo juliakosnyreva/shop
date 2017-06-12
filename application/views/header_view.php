@@ -2,9 +2,9 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../../css/main.css" rel="stylesheet">
 </head>
 <body>
 <header id="header">
@@ -13,14 +13,14 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="logo pull-left">
-                        <a href="#"><img src="images/home/logo.png" alt="Shop" /></a>
+                        <a href="#"><img src="../../images/home/logo.png" alt="Shop" /></a>
                     </div>
                 </div>
                 <div class="col-sm-8">
                     <div class="shop-menu pull-right">
                         <ul class="nav navbar-nav">
                             <li><a href="#"><i class="fa fa-shopping-cart"></i> Корзина</a></li>
-                            <li><a href="#"><i class="fa fa-lock"></i> Вход</a></li>
+                            <li><a href="/user/login"><i class="fa fa-lock"></i> Вход</a></li>
                         </ul>
                     </div>
                 </div>
