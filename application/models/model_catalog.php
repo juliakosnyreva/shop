@@ -5,7 +5,7 @@ class Model_Catalog extends Model {
 	public function get_list() {	
 	
 		 $sql = "SELECT * FROM product";
-		 $result = mysql_query($sql)  or die(mysql_error());
+		 $result = mysql_query($sql);
 
 		while ($row = mysql_fetch_assoc($result)) {		 
 			$сatalogProducts[]=array(

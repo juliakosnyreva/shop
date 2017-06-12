@@ -9,7 +9,7 @@
                 <div class="product-image-wrapper">
                     <div class="single-products">
                         <div class="productinfo text-center">
-                            <img src="#" alt=""/>
+                            <img src="../../images/home/product1.jpg" alt="prod1"/>
                             <h2 id='1'> <?= $product["price"] ?> руб. </h2>
                             <p> <?= $product["name"] ?> </p>
                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
