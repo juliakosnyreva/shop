@@ -12,4 +12,5 @@ class Controller_Catalog extends Controller
 		$data = $this->model->get_list();		
 		$this->view->generate('catalog_view.php', 'header_view.php', $data);
 	}
+	
 }
